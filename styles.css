@@ -1,0 +1,286 @@
+/* --- Core Reset & Design Tokens --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-main: #f8fafc;
+    --sidebar-bg: #090d16;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --accent-blue: #0284c7;
+    --accent-light: #38bdf8;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+}
+
+body {
+    background: var(--bg-main);
+    padding: 40px 20px;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Container Layout --- */
+.resume {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04);
+    border: 1px solid var(--card-border);
+}
+
+/* --- Left Sidebar (Obsidian Theme) --- */
+.sidebar {
+    background: var(--sidebar-bg);
+    color: #f1f5f9;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.profile h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.profile .subtitle {
+    color: var(--accent-light);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section h3 {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Elements Styling */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13.5px;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+}
+
+.contact-item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: var(--accent-light);
+}
+
+.contact-item .icon {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* Compact Sidebar Tags */
+.skill-tags-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags-mini span {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.custom-list {
+    list-style: none;
+}
+
+.custom-list li {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.custom-list li::before {
+    content: "•";
+    color: var(--accent-light);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+/* --- Right Main Column --- */
+.main {
+    padding: 50px 50px;
+    background: #ffffff;
+}
+
+.main section {
+    margin-bottom: 40px;
+}
+
+.main h2 {
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #f1f5f9;
+    margin-left: 15px;
+}
+
+.profile-text {
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* Premium Minimalist Cards */
+.card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;
+}
+
+.card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.card h3 {
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.institution {
+    color: var(--accent-blue);
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.date-badge {
+    background: #f1f5f9;
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Card Content Details */
+.card-list {
+    padding-left: 16px;
+}
+
+.card-list li {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.project-card h3 {
+    margin-bottom: 6px;
+}
+
+.project-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Clean, modern pill tags for Soft Skills */
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-flex span {
+    background: #f1f5f9;
+    color: var(--text-dark);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+}
+
+
+/* --- Responsive Engineering --- */
+@media (max-width: 850px) {
+    body {
+        padding: 0;
+    }
+
+    .resume {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+        border: none;
+    }
+
+    .sidebar {
+        padding: 40px 25px;
+    }
+
+    .main {
+        padding: 40px 25px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
